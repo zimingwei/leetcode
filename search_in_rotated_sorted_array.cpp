@@ -8,7 +8,7 @@ public:
             if (A[mid] == target) {
                 return mid;
             } 
-            if (A[mid] >= A[left]) { // A[mid] is always greater than or equal to A[left]
+            if (A[mid] >= A[left]) { // A[mid] is greater than or equal to A[left]
                 if (target >= A[left] && target < A[mid]) { // target is less than A[mid]
                     right = mid - 1;
                 } else {
