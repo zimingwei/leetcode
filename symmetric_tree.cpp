@@ -31,3 +31,38 @@ public:
         }
     }
 };
+
+class Solution {
+public:
+    // Time: O(n)
+    // Space: O(logn)
+    bool isSymmetric(TreeNode *root) {
+        if (root == NULL) {
+            return true;
+        }
+        
+        stack<TreeNode*> S;
+        S.push(root->left);
+        S.push(root->right);
+        while (!S.empty()) {
+            TreeNode *right = S.top();
+            S.pop();
+            TreeNode *left = S.top();
+            S.pop();
+            if (right == NULL && left == NULL) {
+                continue;
+            } else if (right != NULL && left != NULL) {
+                if (right->val != left->val) {
+                    return false;
+                }
+                S.push(left->left);
+                S.push(right->right);
+                S.push(left->right);
+                S.push(right->left);
+            } else {
+                return false;
+            }
+        }
+        return true;
+    }
+};
