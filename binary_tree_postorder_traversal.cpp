@@ -9,6 +9,8 @@
  */
 class Solution {
 public:
+    // Time: O(n)
+    // Space: O(n)
     vector<int> postorderTraversal(TreeNode *root) {
         vector<int> result;
         if (root == NULL) {
