@@ -7,7 +7,7 @@ public:
         int i = 0;
         int j = height.size() - 1;
         while (i < j) {
-            int area = area = (j - i) * min(height[i], height[j]);
+            int area = (j - i) * min(height[i], height[j]);
             if (height[i] < height[j]) {
                 i++;
             } else {
