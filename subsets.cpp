@@ -1,16 +1,16 @@
 class Solution {
 private:
-    void subsets(vector<int> &S, int step, vector<int> &subset,
-                 vector<vector<int> > &result) {
+    void DFS(vector<int> &S, int step, vector<int> &subset,
+             vector<vector<int> > &result) {
         if (step == S.size()) {
             result.push_back(subset);
             return;
         }
         
-        subsets(S, step+1, subset, result);
+        DFS(S, step+1, subset, result);
         
         subset.push_back(S[step]);
-        subsets(S, step+1, subset, result);
+        DFS(S, step+1, subset, result);
         subset.pop_back();
     }
 public:
@@ -20,7 +20,7 @@ public:
         sort(S.begin(), S.end());
         vector<vector<int> > result;
         vector<int> subset;
-        subsets(S, 0, subset, result);
+        DFS(S, 0, subset, result);
         return result;
     }
 };
