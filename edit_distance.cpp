@@ -8,6 +8,8 @@ public:
     //     if we delete x for word1, then f[i][j] = f[i-1][j] + 1
     //     if we replace x with y for word1, then f[i][j] = f[i-1][j-1] + 1
     //     f[i][j] is the min of the three situations.
+    // Time: O(mn)
+    // Space: O(mn)
     int minDistance(string word1, string word2) {
         int m = word1.length();
         int n = word2.length();
