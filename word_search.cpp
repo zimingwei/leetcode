@@ -24,7 +24,7 @@ private:
     }
 
 public:
-    // Time: O((mn)^2)
+    // Time: O(4^(mn))
     // Space: O(mn)
     bool exist(vector<vector<char> > &board, string word) {
         int m = board.size();
